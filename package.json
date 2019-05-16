@@ -1,11 +1,13 @@
 {
-  "name": "json-server",
+  "name": "@nmyvision/json-server",
   "version": "0.14.3",
-  "description": "Serves JSON files through REST routes.",
+  "description": "Serves JSON files through REST routes. Forked from typicode.",
   "main": "./lib/server/index.js",
-  "bin": "./lib/cli/bin.js",
+  "bin": {
+    "json-server": "./lib/cli/bin.js"
+  },
   "directories": {
-    "test": "test"
+    "lib": "lib"
   },
   "scripts": {
     "test": "npm run build && cross-env NODE_ENV=test jest && npm run lint",
