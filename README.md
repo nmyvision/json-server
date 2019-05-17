@@ -89,7 +89,7 @@ See also:
 Install JSON Server 
 
 ```
-npm install -g json-server
+npm install -g @nmyvision/json-server
 ```
 
 Create a `db.json` file with some data
