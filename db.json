@@ -16,6 +16,24 @@
   "profile": {
     "name": "typicode"
   },
+  "gallery": [
+    {
+      "id": 1,
+      "list": [
+        {
+          "photoId": 1,
+          "src": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+        },
+        {
+          "photoId": 2,
+          "src": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+        }
+      ],
+      "nested": {
+        "theme": "bootstrap"
+      }
+    }
+  ],
   "sessions": [
     {
       "id": 1,

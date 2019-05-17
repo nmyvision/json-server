@@ -1,4 +1,5 @@
 const express = require('express')
+const deepmerge = require('deepmerge')
 const write = require('./write')
 const getFullURL = require('./get-full-url')
 const delay = require('./delay')
@@ -39,9 +40,8 @@ module.exports = (db, name, opts) => {
       if (req.method === 'PUT') {
         db.set(name, req.body).value()
       } else {
-        db.get(name)
-          .assign(req.body)
-          .value()
+        const resource = db.get(name).value()
+        db.set(name, deepmerge(resource, req.body)).value()
       }
 
       res.locals.data = db.get(name).value()
