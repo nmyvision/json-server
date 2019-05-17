@@ -5,6 +5,7 @@ const write = require('./write')
 const getFullURL = require('./get-full-url')
 const utils = require('../utils')
 const delay = require('./delay')
+const deepmerge = require('deepmerge')
 
 module.exports = (db, name, opts) => {
   // Create router
@@ -308,28 +309,24 @@ module.exports = (db, name, opts) => {
   // PATCH /name/:id
   function update(req, res, next) {
     const id = req.params.id
-    let resource
+    let resource = db
+      .get(name)
+      .getById(id)
+      .value()
 
     if (opts._isFake) {
-      resource = db
-        .get(name)
-        .getById(id)
-        .value()
-
       if (req.method === 'PATCH') {
         resource = { ...resource, ...req.body }
       } else {
         resource = { ...req.body, id: resource.id }
       }
     } else {
-      let chain = db.get(name)
+      const source =
+        req.method === 'PATCH' ? deepmerge(resource, req.body) : req.body
 
-      chain =
-        req.method === 'PATCH'
-          ? chain.updateById(id, req.body)
-          : chain.replaceById(id, req.body)
-
-      resource = chain.value()
+      db.get(name)
+        .replaceById(id, source)
+        .value()
     }
 
     if (resource) {
