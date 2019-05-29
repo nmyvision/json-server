@@ -1,6 +1,6 @@
 {
   "name": "@nmyvision/json-server",
-  "version": "0.14.4",
+  "version": "0.14.5",
   "description": "Serves JSON files through REST routes. Forked from typicode.",
   "main": "./lib/server/index.js",
   "bin": {
@@ -95,7 +95,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/typicode/json-server.git"
+    "url": "git://github.com/nmyvision/json-server.git"
   },
   "keywords": [
     "JSON",
@@ -113,12 +113,12 @@
     "dummy",
     "sandbox"
   ],
-  "author": "Typicode <typicode@gmail.com>",
+  "author": "M. Gambill  <git@nmyvision.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/typicode/json-server/issues"
+    "url": "https://github.com/nmyvision/json-server/issues"
   },
-  "homepage": "https://github.com/typicode/json-server",
+  "homepage": "https://github.com/nmyvision/json-server",
   "engines": {
     "node": ">=6"
   },
