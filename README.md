@@ -54,6 +54,7 @@ See also:
   * [Slice](#slice)
   * [Operators](#operators)
   * [Full-text search](#full-text-search)
+  * [Map results](#map-results)
   * [Relationships](#relationships)
   * [Database](#database)
   * [Homepage](#homepage)
@@ -244,7 +245,7 @@ or expand to multiple fields
 GET /posts?q=internet&prop=title&prop=second_field
 ```
 
-### Map Results
+### Map results
 
 Add `_keys` to limit the results
 
